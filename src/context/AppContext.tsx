@@ -77,11 +77,11 @@ interface AppContextType {
 const AppContext = createContext<AppContextType | undefined>(undefined);
 
 const STORAGE_KEYS = {
-  COMPLAINTS: 'emci_complaints_v1',
-  NOTIFICATIONS: 'emci_notifications_v1',
-  AUDIT_LOGS: 'emci_audit_logs_v1',
-  ISO_EVAL: 'emci_iso_evaluations_v1',
-  CURRENT_USER_ID: 'emci_active_user_id_v1',
+  COMPLAINTS: 'emci_complaints_v2',
+  NOTIFICATIONS: 'emci_notifications_v2',
+  AUDIT_LOGS: 'emci_audit_logs_v2',
+  ISO_EVAL: 'emci_iso_evaluations_v2',
+  CURRENT_USER_ID: 'emci_active_user_id_v2',
 };
 
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
