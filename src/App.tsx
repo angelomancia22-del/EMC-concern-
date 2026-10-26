@@ -9,7 +9,8 @@ import { TrackTicketView } from './components/TrackTicketView';
 import { ResearchThesisView } from './components/ResearchThesisView';
 import { NotificationDrawer } from './components/NotificationDrawer';
 import { ComplaintDetailModal } from './components/ComplaintDetailModal';
-import { ShieldCheck, Heart, Phone, Mail, MapPin } from 'lucide-react';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { ShieldCheck, Phone, Mail, MapPin } from 'lucide-react';
 
 const MainLayout: React.FC = () => {
   const { activeTab, selectedTicketId, setSelectedTicketId } = useApp();
@@ -107,8 +108,10 @@ const MainLayout: React.FC = () => {
 
 export default function App() {
   return (
-    <AppProvider>
-      <MainLayout />
-    </AppProvider>
+    <ErrorBoundary>
+      <AppProvider>
+        <MainLayout />
+      </AppProvider>
+    </ErrorBoundary>
   );
 }

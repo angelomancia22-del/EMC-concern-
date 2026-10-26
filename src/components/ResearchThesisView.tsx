@@ -60,9 +60,9 @@ export const ResearchThesisView: React.FC = () => {
     let sum = 0;
     let count = 0;
 
-    isoEvaluations.forEach((evaluation) => {
+    (isoEvaluations || []).forEach((evaluation) => {
       categoryQuestions.forEach((q) => {
-        if (evaluation.scores[q.id] !== undefined) {
+        if (evaluation?.scores && evaluation.scores[q.id] !== undefined) {
           sum += evaluation.scores[q.id];
           count += 1;
         }

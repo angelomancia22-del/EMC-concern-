@@ -111,6 +111,8 @@ export const StudentPortal: React.FC = () => {
     setIsAnonymous(false);
   };
 
+  const [viewScope, setViewScope] = useState<'my' | 'all'>('my');
+
   // Student's complaints (match either student ID or email, or show all if currently viewing as student)
   const myComplaints = complaints.filter(
     (c) =>
@@ -119,7 +121,9 @@ export const StudentPortal: React.FC = () => {
       (!c.isAnonymous && c.studentName === currentUser.name)
   );
 
-  const filteredComplaints = myComplaints.filter((c) => {
+  const displayList = viewScope === 'my' ? myComplaints : complaints;
+
+  const filteredComplaints = displayList.filter((c) => {
     const matchesFilter = filterStatus === 'all' || c.status.toLowerCase() === filterStatus.toLowerCase();
     const matchesSearch =
       c.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -459,11 +463,35 @@ export const StudentPortal: React.FC = () => {
           <div>
             <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
               <FileText className="w-5 h-5 text-amber-500" />
-              <span>My Submitted Grievance Cases</span>
+              <span>Student Grievance Docket</span>
             </h3>
             <p className="text-xs text-slate-500">
               Track real-time progress, read staff investigation notes, and evaluate resolution quality.
             </p>
+            <div className="flex items-center gap-1.5 mt-2.5">
+              <button
+                type="button"
+                onClick={() => setViewScope('my')}
+                className={`px-3 py-1 text-xs rounded-lg font-semibold transition-all ${
+                  viewScope === 'my'
+                    ? 'bg-amber-500 text-slate-950 shadow-xs'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                My Filed Concerns ({myComplaints.length})
+              </button>
+              <button
+                type="button"
+                onClick={() => setViewScope('all')}
+                className={`px-3 py-1 text-xs rounded-lg font-semibold transition-all ${
+                  viewScope === 'all'
+                    ? 'bg-slate-900 text-white shadow-xs'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                All Campus Concerns ({complaints.length})
+              </button>
+            </div>
           </div>
 
           {/* Search & Filter */}

@@ -115,7 +115,7 @@ export const TrackTicketView: React.FC = () => {
                   Lifecycle Milestones
                 </h4>
                 <div className="space-y-3">
-                  {foundTicket.statusHistory.map((step: any, idx: number) => (
+                  {(foundTicket.statusHistory || []).map((step: any, idx: number) => (
                     <div key={idx} className="flex items-start gap-3 text-xs">
                       <div className="w-6 h-6 rounded-full bg-emerald-500 text-white font-bold flex items-center justify-center shrink-0 text-[10px]">
                         ✓

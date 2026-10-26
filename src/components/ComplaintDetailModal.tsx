@@ -655,13 +655,13 @@ export const ComplaintDetailModal: React.FC<ComplaintDetailModalProps> = ({ comp
             <h4 className="text-xs font-bold text-slate-500 uppercase tracking-wider flex items-center justify-between">
               <span>Communication Thread &amp; Audit Log</span>
               <span className="text-[11px] font-normal text-slate-400">
-                {complaint.comments.length} message{complaint.comments.length !== 1 ? 's' : ''}
+                {(complaint.comments || []).length} message{(complaint.comments || []).length !== 1 ? 's' : ''}
               </span>
             </h4>
 
             {/* Comment List */}
             <div className="space-y-3">
-              {complaint.comments.map((comm) => {
+              {(complaint.comments || []).map((comm) => {
                 // Hide internal remarks from students
                 if (comm.isInternalOnly && isStudent) return null;
 
