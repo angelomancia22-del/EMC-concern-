@@ -17,7 +17,12 @@ const MainLayout: React.FC = () => {
   const [isNotifOpen, setIsNotifOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-100 flex flex-col font-sans text-slate-800 antialiased selection:bg-amber-200 selection:text-slate-900">
+    <div
+      className="min-h-screen flex flex-col font-sans text-slate-800 antialiased selection:bg-amber-200 selection:text-slate-900 bg-slate-900 bg-cover bg-center bg-fixed"
+      style={{
+        backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.94)), url('/assets/aistudio/FB_IMG_1793160649042_17e8179c.jpg')`,
+      }}
+    >
       {/* Institutional Navigation Header */}
       <Header onToggleNotifications={() => setIsNotifOpen(true)} />
 
@@ -43,14 +48,16 @@ const MainLayout: React.FC = () => {
       )}
 
       {/* Institutional Footer */}
-      <footer className="bg-slate-900 text-slate-400 text-xs border-t border-slate-800 mt-12 py-8 print:hidden">
+      <footer className="bg-slate-950/95 backdrop-blur-md text-slate-400 text-xs border-t border-slate-800 mt-12 py-8 print:hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 pb-6 border-b border-slate-800">
             <div className="space-y-2 md:col-span-2">
-              <div className="flex items-center gap-2 text-white font-bold text-sm">
-                <span className="w-6 h-6 rounded bg-amber-500 text-slate-950 font-black text-xs flex items-center justify-center">
-                  EMC
-                </span>
+              <div className="flex items-center gap-2.5 text-white font-bold text-sm">
+                <img
+                  src="/assets/aistudio/FB_IMG_1761024576270_a833f677.jpg"
+                  alt="Eastern Mindoro College, Inc. Seal"
+                  className="w-8 h-8 rounded-full bg-white p-0.5 object-contain border border-amber-400 shrink-0 shadow-sm"
+                />
                 <span>Eastern Mindoro College, Inc.</span>
               </div>
               <p className="text-slate-400 text-xs leading-relaxed max-w-md">

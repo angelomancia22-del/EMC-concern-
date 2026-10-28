@@ -137,16 +137,36 @@ export const StudentPortal: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Top Banner & Welcome */}
-      <div className="bg-gradient-to-r from-blue-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl relative overflow-hidden border border-blue-800/40">
+      {/* Top Banner & Welcome with Campus Background & Official Logo */}
+      <div
+        className="rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden border border-blue-700/50 text-white bg-cover bg-center"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(15, 23, 42, 0.94) 0%, rgba(30, 58, 138, 0.85) 60%, rgba(15, 23, 42, 0.78) 100%), url('/assets/aistudio/FB_IMG_1793160649042_17e8179c.jpg')`,
+        }}
+      >
         <div className="relative z-10 max-w-2xl">
-          <div className="inline-flex items-center gap-2 bg-amber-400/20 text-amber-300 border border-amber-400/40 px-3 py-1 rounded-full text-xs font-semibold mb-3">
-            <Shield className="w-3.5 h-3.5" /> Eastern Mindoro College Student Voice Portal
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-14 h-14 rounded-full bg-white p-1 shadow-lg shadow-black/50 border-2 border-amber-400 shrink-0">
+              <img
+                src="/assets/aistudio/FB_IMG_1761024576270_a833f677.jpg"
+                alt="Eastern Mindoro College, Inc. Seal"
+                className="w-full h-full object-contain rounded-full"
+              />
+            </div>
+            <div>
+              <div className="inline-flex items-center gap-1.5 bg-amber-400/20 text-amber-300 border border-amber-400/40 px-2.5 py-0.5 rounded-full text-[11px] font-semibold">
+                <Shield className="w-3 h-3" /> Eastern Mindoro College Student Voice Portal
+              </div>
+              <p className="text-xs text-slate-300 font-medium mt-0.5">
+                Bongabong, Oriental Mindoro • Established 1945
+              </p>
+            </div>
           </div>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
+
+          <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2">
             Welcome, {currentUser.name}
           </h2>
-          <p className="text-sm text-slate-300 leading-relaxed">
+          <p className="text-sm text-slate-200 leading-relaxed drop-shadow-xs">
             Report academic concerns, facility issues, cashier queues, or student welfare complaints directly to college administrators. Your concerns are tracked with guaranteed Service Level Agreements (SLAs).
           </p>
 

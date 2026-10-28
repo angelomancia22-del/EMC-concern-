@@ -99,8 +99,12 @@ export const Header: React.FC<HeaderProps> = ({ onToggleNotifications }) => {
         <div className="flex items-center justify-between gap-4">
           {/* Logo & College Identity */}
           <div className="flex items-center gap-3 cursor-pointer" onClick={() => setActiveTab('student')}>
-            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center shadow-md shadow-amber-500/20 text-slate-950 font-black text-xl tracking-tighter border border-amber-300">
-              EMC
+            <div className="w-12 h-12 rounded-full bg-white p-0.5 shadow-lg shadow-black/40 border-2 border-amber-400 flex items-center justify-center shrink-0 overflow-hidden hover:scale-105 transition-transform">
+              <img
+                src="/assets/aistudio/FB_IMG_1761024576270_a833f677.jpg"
+                alt="Eastern Mindoro College, Inc. Official Logo"
+                className="w-full h-full object-contain rounded-full"
+              />
             </div>
             <div>
               <div className="flex items-center gap-2">

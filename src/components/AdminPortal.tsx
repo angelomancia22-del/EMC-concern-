@@ -54,19 +54,33 @@ export const AdminPortal: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Admin Executive Header */}
-      <div className="bg-gradient-to-r from-purple-950 via-slate-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-purple-800/40">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-purple-500/20 text-purple-300 border border-purple-500/40 px-3 py-1 rounded-full text-xs font-semibold mb-3">
-              <ShieldCheck className="w-3.5 h-3.5" /> Dean of Student Affairs / Central Administration
+      {/* Admin Executive Header with Campus Background & Official Logo */}
+      <div
+        className="text-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-purple-800/50 bg-cover bg-center relative overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(15, 23, 42, 0.94) 0%, rgba(88, 28, 135, 0.88) 60%, rgba(15, 23, 42, 0.82) 100%), url('/assets/aistudio/FB_IMG_1793160649042_17e8179c.jpg')`,
+        }}
+      >
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+          <div className="flex items-start gap-4">
+            <div className="w-14 h-14 rounded-full bg-white p-1 shadow-lg shadow-black/50 border-2 border-amber-400 shrink-0 hidden sm:block">
+              <img
+                src="/assets/aistudio/FB_IMG_1761024576270_a833f677.jpg"
+                alt="Eastern Mindoro College, Inc. Seal"
+                className="w-full h-full object-contain rounded-full"
+              />
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
-              System Administration &amp; Grievance Oversight
-            </h2>
-            <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
-              Institutional governance of student concerns, departmental triage, role-based access control, and complete audit trail preservation for Eastern Mindoro College, Inc.
-            </p>
+            <div>
+              <div className="inline-flex items-center gap-2 bg-purple-500/20 text-purple-300 border border-purple-500/40 px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                <ShieldCheck className="w-3.5 h-3.5" /> Dean of Student Affairs / Central Administration
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
+                System Administration &amp; Grievance Oversight
+              </h2>
+              <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
+                Institutional governance of student concerns, departmental triage, role-based access control, and complete audit trail preservation for Eastern Mindoro College, Inc.
+              </p>
+            </div>
           </div>
 
           <div className="flex gap-3">

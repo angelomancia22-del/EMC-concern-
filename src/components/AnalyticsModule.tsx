@@ -113,19 +113,33 @@ export const AnalyticsModule: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      {/* Analytics Banner */}
-      <div className="bg-gradient-to-r from-blue-950 via-slate-900 to-indigo-950 text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-blue-800/40">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 border border-blue-500/40 px-3 py-1 rounded-full text-xs font-semibold mb-3">
-              <BarChart3 className="w-3.5 h-3.5" /> Institutional Quality Assurance &amp; SLA Intelligence
+      {/* Analytics Banner with Campus Background & Official Logo */}
+      <div
+        className="text-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-blue-700/50 bg-cover bg-center relative overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(15, 23, 42, 0.94) 0%, rgba(30, 58, 138, 0.88) 60%, rgba(15, 23, 42, 0.8) 100%), url('/assets/aistudio/FB_IMG_1793160649042_17e8179c.jpg')`,
+        }}
+      >
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 relative z-10">
+          <div className="flex items-start gap-4">
+            <div className="w-14 h-14 rounded-full bg-white p-1 shadow-lg shadow-black/50 border-2 border-amber-400 shrink-0 hidden sm:block">
+              <img
+                src="/assets/aistudio/FB_IMG_1761024576270_a833f677.jpg"
+                alt="EMCI Official Seal"
+                className="w-full h-full object-contain rounded-full"
+              />
             </div>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
-              Grievance Analytics &amp; Decision Support Module
-            </h2>
-            <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
-              Empirical data on student concerns across academic, administrative, and facility domains to aid the Eastern Mindoro College administration in continuous institutional enhancement.
-            </p>
+            <div>
+              <div className="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 border border-blue-500/40 px-3 py-1 rounded-full text-xs font-semibold mb-3">
+                <BarChart3 className="w-3.5 h-3.5" /> Institutional Quality Assurance &amp; SLA Intelligence
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
+                Grievance Analytics &amp; Decision Support Module
+              </h2>
+              <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
+                Empirical data on student concerns across academic, administrative, and facility domains to aid the Eastern Mindoro College administration in continuous institutional enhancement.
+              </p>
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-2">
@@ -405,6 +419,11 @@ export const AnalyticsModule: React.FC = () => {
             <div className="border border-slate-300 p-8 rounded-xl bg-white space-y-6 text-slate-900 text-xs leading-relaxed print:p-0 print:border-none">
               {/* College Letterhead */}
               <div className="text-center border-b-2 border-slate-900 pb-4">
+                <img
+                  src="/assets/aistudio/FB_IMG_1761024576270_a833f677.jpg"
+                  alt="Eastern Mindoro College, Inc. Seal"
+                  className="w-16 h-16 mx-auto mb-2 rounded-full border border-slate-300 p-0.5 object-contain bg-white shadow-xs"
+                />
                 <div className="font-serif font-black text-lg tracking-wide text-blue-950 uppercase">
                   Eastern Mindoro College, Inc.
                 </div>

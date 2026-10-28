@@ -21,13 +21,25 @@ export const TrackTicketView: React.FC = () => {
   return (
     <div className="max-w-3xl mx-auto space-y-6">
       {/* Banner */}
-      <div className="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl text-center border border-slate-800">
-        <div className="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 border border-amber-500/40 px-3 py-1 rounded-full text-xs font-semibold mb-3">
+      <div
+        className="text-white rounded-2xl p-6 sm:p-8 shadow-2xl text-center border border-slate-700 bg-cover bg-center relative overflow-hidden"
+        style={{
+          backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.96)), url('/assets/aistudio/FB_IMG_1793160649042_17e8179c.jpg')`,
+        }}
+      >
+        <div className="w-16 h-16 rounded-full bg-white p-1 mx-auto mb-3 shadow-lg border-2 border-amber-400">
+          <img
+            src="/assets/aistudio/FB_IMG_1761024576270_a833f677.jpg"
+            alt="Eastern Mindoro College, Inc. Logo"
+            className="w-full h-full object-contain rounded-full"
+          />
+        </div>
+        <div className="inline-flex items-center gap-1.5 bg-amber-500/20 text-amber-300 border border-amber-500/40 px-3 py-1 rounded-full text-xs font-semibold mb-2">
           <Search className="w-3.5 h-3.5" /> Instant Grievance Tracking Engine
         </div>
         <h2 className="text-2xl font-bold tracking-tight">Track Your Concern by Reference Code</h2>
-        <p className="text-xs text-slate-400 max-w-lg mx-auto mt-2">
-          No sign-in required. Enter your tracking number (e.g. EMC-2026-0101) issued during submission to view current stage, staff investigation notes, and SLA status.
+        <p className="text-xs text-slate-300 max-w-lg mx-auto mt-2">
+          Eastern Mindoro College, Inc. • Enter your reference code (e.g. EMC-2026-0101) issued during submission to view current stage, staff investigation notes, and SLA status.
         </p>
 
         {/* Input Form */}

@@ -157,7 +157,12 @@ export const ComplaintDetailModal: React.FC<ComplaintDetailModalProps> = ({ comp
       <div className="relative w-full max-w-4xl bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden my-auto max-h-[92vh] flex flex-col">
         {/* Modal Header */}
         <div className="bg-slate-900 text-white px-6 py-4 flex items-center justify-between border-b border-slate-800">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
+            <img
+              src="/assets/aistudio/FB_IMG_1761024576270_a833f677.jpg"
+              alt="EMCI Seal"
+              className="w-7 h-7 rounded-full bg-white p-0.5 object-contain border border-amber-400 shrink-0 shadow-xs"
+            />
             <span className="font-mono text-xs px-2 py-1 rounded bg-amber-500/20 text-amber-400 border border-amber-500/40 font-bold">
               {complaint.ticketNumber}
             </span>
